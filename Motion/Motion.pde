@@ -3,7 +3,7 @@ Ship shipo2 = new Ship("ship_0.2.png", 50, 50);
 
 void setup() {
   size(850, 1000);
-  frameRate(600);
+  frameRate(60);
   
 //shipo("ship_0.2.png", 100, 100);
 }
