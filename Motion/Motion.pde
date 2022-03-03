@@ -2,8 +2,8 @@ Ship shipo = new Ship("ship_0.2.png", 100, 100);
 Ship shipo2 = new Ship("ship_0.2.png", 50, 50);
 
 void setup() {
-  size(1900, 1000);
-  frameRate(60);
+  size(850, 1000);
+  frameRate(600);
   
 //shipo("ship_0.2.png", 100, 100);
 }
@@ -11,14 +11,14 @@ void setup() {
 void draw() {
   background(0, 0, 0);
 
-
+println(Keystrokes());
 
 
 shipo.PostingImg();
-shipo.Move(39, 37, 38, 40, 'd');
+shipo.Move(39, 37, 38, 40);
 
 shipo2.PostingImg();
-shipo2.Move(100, 97, 119, 115, 'k');
+shipo2.Move(68, 65, 87, 83);
   
 
   //

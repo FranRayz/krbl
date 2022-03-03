@@ -30,49 +30,35 @@ class Ship {
     imageMode(CORNER);
   }
 
-  void Move(int right, int left, int up, int down, char s) {
+  void Move(int right, int left, int up, int down) {
     // Поворот влево и вправо
+    IntList keysList = Keystrokes();
 
-    if (s == 'd') {
-      if (keyPressed) {
-        if (keyCode == right) {
-          //dx = 1;
-          angle += 0.0199;
-        } else if (keyCode == left) {
-          //dx = -1;
-          angle -= 0.0199;
-        }
-
-        // Движение вперед и назад
-        if (keyCode == up) {
-          //dy = -1;
-          println("1");
-          this.d += 0.01;
-        } else if (keyCode == down) {
-          this.d -= 0.01;
-        }
+    for (int i = 0; i < keysList.size(); i++)
+    {
+      if (keysList.get(i) == right) {
+        //dx = 1;
+        angle += 0.0199;
       }
-    }
-    if (s == 'k') {
-      if (keyPressed) {
-        if (key == right) {
-          //dx = 1;
-          angle += 0.019;
-        } else if (key == left) {
-          //dx = -1;
-          angle -= 0.019;
-        }
-
-        // Движение вперед и назад
-        if (key == up) {
-          //dy = -1;
-          println("1");
-          this.d += 0.01;
-        } else if (key == down) {
-          this.d -= 0.01;
-        }
+      if (keysList.get(i) == left) {
+        //dx = -1;
+        angle -= 0.0199;
       }
+
+      // Движение вперед и назад
+      if (keysList.get(i) == up) {
+        //dy = -1;
+ 
+        this.d += 0.01;
+      }
+      if (keysList.get(i) == down) {
+        this.d -= 0.01;
+      }
+
+
+
     }
+
 
 
 
