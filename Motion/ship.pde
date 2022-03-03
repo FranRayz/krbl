@@ -37,10 +37,10 @@ class Ship {
       if (keyPressed) {
         if (keyCode == right) {
           //dx = 1;
-          angle += 0.019;
+          angle += 0.0199;
         } else if (keyCode == left) {
           //dx = -1;
-          angle -= 0.019;
+          angle -= 0.0199;
         }
 
         // Движение вперед и назад
