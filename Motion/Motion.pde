@@ -1,5 +1,5 @@
-Ship shipo = new Ship("ship_0.2.png", 100, 100);
-Ship shipo2 = new Ship("ship_0.2.png", 50, 50);
+Ship shipo = new Ship("ship_0.2.png", new PVector(100, 100));
+Ship shipo2 = new Ship("ship_0.2.png",new PVector(50, 50));
 
 void setup() {
   size(850, 1000);

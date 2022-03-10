@@ -5,21 +5,19 @@ class Ship {
 
   float angle = 0;
   float d = 0;
-  float x;
-  float y;
+  PVector vector;
   String img;
 
-  Ship(String img, float x, float y) {
+  Ship(String img, PVector vector) {
     this.img = img;
-    this.x = x;
-    this.y = y;
+    this.vector = vector;
   }
 
   void PostingImg() {
     picture = loadImage(this.img);
     //расчет положения изображения
-    float new_x = this.x+8*cos(this.angle);
-    float new_y = this.y+8*sin(this.angle);
+    float new_x = this.vector.x+8*cos(this.angle);
+    float new_y = this.vector.y+8*sin(this.angle);
 
     imageMode(CENTER);
     pushMatrix(); // запомнить текущую матрицу рисования
@@ -38,11 +36,11 @@ class Ship {
     {
       if (keysList.get(i) == right) {
         //dx = 1;
-        angle += 0.0199;
+        angle += 0.0199+d;
       }
       if (keysList.get(i) == left) {
         //dx = -1;
-        angle -= 0.0199;
+        angle -= 0.0199+d;
       }
 
       // Движение вперед и назад
@@ -66,8 +64,8 @@ class Ship {
     if (d > 0) {
       d -= 0.004;
       d = d * (-1);
-      x = x - d * cos(angle);
-      y = y - d * sin(angle);
+      this.vector.x = this.vector.x - d * cos(angle);
+      this.vector.y = this.vector.y - d * sin(angle);
       d = d * (-1);
     }
 
@@ -75,8 +73,8 @@ class Ship {
     if (d < 0) {
       d += 0.004;
       d = d * (1);
-      x = x + d * cos(angle);
-      y = y + d * sin(angle);
+      this.vector.x = this.vector.x + d * cos(angle);
+      this.vector.y = this.vector.y + d * sin(angle);
       d = d * (1);
     }
   }
